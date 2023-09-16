@@ -1,0 +1,42 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Dependency directories
+.pnpm-store
+pnpm-lock.yaml
+*.tsbuildinfo
+*.npm
+*.yarn
+
+# Logs
+logs
+*.log
+
+# Editor/IDE specific files
+.vscode
+.idea
+
+# Build output
+build
+dist
+out
+public
+
+# Environment variables
+.env
+
+# Config files with sensitive information
+config.js
+config.json
+
+# Automatically generated documentation
+docs
+
+# Output of code coverage tools
+coverage
+
+# Temp files and directories
+.tmp
+temp

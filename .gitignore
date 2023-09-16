@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+*/node_modules/
+*/npm-debug.log
+*/yarn-error.log
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+.pnpm-store/
+pnpm-lock.yaml
+*.tsbuildinfo
+*.npm
+*.yarn
+
+# Optional: OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Editor/IDE specific files
+.vscode/
+.idea/
+
+# Optional: Build output
+build/
+dist/
+out/
+public/
+
+# Optional: Environment variables
+.env
+
+# Optional: Config files with sensitive information
+config.js
+config.json
+
+# Optional: Automatically generated documentation
+docs/
+
+# Optional: Output of code coverage tools
+coverage/
+
+# Optional: Temp files and directories
+.tmp/
+temp/
