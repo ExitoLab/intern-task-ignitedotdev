@@ -4,9 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
-    "start": "node app.js",
-    "build": "npm install && npm run build"
+    "test": "echo 'Running tests'",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",

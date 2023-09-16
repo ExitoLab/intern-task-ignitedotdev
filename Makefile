@@ -3,7 +3,7 @@
 CLUSTER_NAME := intern
 KUBECONFIG := $(shell kind get kubeconfig-path --name=$(CLUSTER_NAME))
 IMAGE_NAME := intern-task-ignitedotdev
-IMAGE_TAG := v0.0.1
+IMAGE_TAG := v0.0.2
 PORT := 3000
 
 .PHONY: create-cluster
@@ -33,7 +33,7 @@ build:
 # Run a Docker container from the previously built image
 .PHONY: run
 run: build
-	docker run -it --rm $(IMAGE_NAME):$(IMAGE_TAG)
+	docker run -it -p $(PORT):$(PORT) --rm $(IMAGE_NAME):$(IMAGE_TAG) 
 
 # To scan docker image
 .PHONY: scan
