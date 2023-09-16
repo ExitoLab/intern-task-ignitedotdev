@@ -21,8 +21,8 @@ FROM node:14-alpine
 WORKDIR /app
 
 # Copy only the necessary files from the builder stage
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
+COPY --from=builder package*.json ./
+COPY --from=builder dist ./dist
 
 # Install only production dependencies
 RUN npm install --only=production
