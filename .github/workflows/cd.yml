@@ -21,18 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Java, Scala, and Spark
-        uses: olafurpg/setup-scala@v11
-        with:
-          scala-version: 2.12.14
-          sbt-version: 1.5.5
-
-      - name: Build and Test Spark Application
-        run: sbt clean test
-
-      - name: Build JAR
-        run: sbt assembly
-
       - name: Determine Semantic Version
         id: semver
         run: |
@@ -72,14 +60,3 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
           DOCKER_AUTH_CONFIG: '{"auths": {"https://index.docker.io/v1/": {"username": "${{ secrets.DOCKER_USERNAME }}", "password": "${{ secrets.DOCKERHUB_TOKEN }}", "email": "igeadetokunbo@gmail.com"}}}'
-
-      # - name: Look up images
-      #   run: docker image ls
-      
-      # # push the image manually, see above comment
-      # - name: Docker Build image
-      #   run: docker build . -t ${{ secrets.DOCKER_USERNAME }}/spark-word-count:v0.1.0
-      
-      # # push the image manually, see above comment
-      # - name: Push image
-      #   run: docker push ${{ secrets.DOCKER_USERNAME }}/spark-word-count:v0.1.0
