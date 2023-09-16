@@ -1,4 +1,4 @@
-name: Node.js CI/CD
+name: CI
 
 on:
   pull_request:
@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
 
     strategy:
       matrix:
@@ -15,13 +18,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          path: app
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          path: app
           node-version: ${{ matrix.node-version }}
 
       - name: nodejsscan scan
@@ -29,19 +29,12 @@ jobs:
         uses: ajinabraham/njsscan-action@master
         with:
           args: '.'
-          path: app
 
       - name: Install dependencies
         run: npm ci
-        with:
-          path: app
 
       - name: Node js Build
         run: npm run build --if-present
-        with:
-          path: app
 
       - name: Run tests
         run: npm test
-        with:
-          path: app
