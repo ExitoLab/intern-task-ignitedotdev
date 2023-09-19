@@ -15,6 +15,7 @@
 1. To build the app locally use command (for example, build the Dockefile of the express app) `make run`
 2. To check if kind is installed run command `make check-kind`, it will create kind cluster if not installed.
 3. To create the kind cluster run command `make check-cluster`
+4. To run the terraform file use `make install-helm-chart`
 
 
 ### Structure 

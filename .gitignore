@@ -51,3 +51,10 @@ coverage/
 # Optional: Temp files and directories
 .tmp/
 temp/
+
+
+# Ignore these terraform files
+*/.terraform.lock.hcl
+*/.terraform
+*/terraform.tfstate
+*/terraform.tfstate.backup

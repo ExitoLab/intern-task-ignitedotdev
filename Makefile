@@ -5,6 +5,9 @@ PORT := 3000
 KIND_VERSION ?= 0.20.0
 KIND_BINARY  := kind
 KUBECONFIG_FILE := kind-config
+HELM_CHART_NAME := intern
+NAMESPACE := intern
+RELEASE_NAME := intern
 
 .PHONY: check-kind
 check-kind:
@@ -82,6 +85,14 @@ scan:
 clean:
 	docker rmi $(IMAGE_NAME):$(IMAGE_TAG)
 
+.PHONY: install-helm-chart
+install-helm-chart:
+	cd terraform && terraform init && \
+		terraform fmt -check && terraform validate && \
+		terraform plan -var-file=values.tfvars && terraform apply -var-file=values.tfvars  -auto-approve
+
+destroy-helm-chart:
+	terraform destroy -auto-approve
 
 .PHONY: help
 help:
