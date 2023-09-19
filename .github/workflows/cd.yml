@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.IMG_NAME }}/${{ steps.meta.outputs.tags }}
+          images: ${{ env.IMG_NAME }}:${{ steps.meta.outputs.tags }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr

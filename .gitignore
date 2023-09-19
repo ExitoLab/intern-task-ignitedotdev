@@ -7,6 +7,9 @@ yarn-error.log
 */npm-debug.log
 */yarn-error.log
 
+# kind config file 
+kind-config
+
 # Logs
 logs/
 *.log
